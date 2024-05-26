@@ -28,13 +28,31 @@ local keys = {
 
   -- tabs --
   -- tabs: spawn+close
+  { key = "!", mods = "CTRL|SHIFT", action = act.SpawnTab({ DomainName = "WSL:Ubuntu" }) },
+  { key = "@", mods = "CTRL|SHIFT", action = act.SpawnTab({ DomainName = "WSL:Ubuntu-20.04" }) },
+  -- { key = "3", mods = "CTRL|SHIFT", action = act.SpawnTab("PowerShell Desktop") },
   { key = "t", mods = mod.SUPER, action = act.SpawnTab("DefaultDomain") },
   { key = "t", mods = mod.SUPER_REV, action = act.SpawnTab({ DomainName = "WSL:Ubuntu" }) },
   { key = "w", mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = false }) },
 
   -- tabs: navigation
-  { key = "[", mods = mod.SUPER, action = act.ActivateTabRelative(-1) },
-  { key = "]", mods = mod.SUPER, action = act.ActivateTabRelative(1) },
+  {
+    key = "R",
+    mods = "CMD|SHIFT",
+    action = act.PromptInputLine({
+      description = "Enter new name for tab",
+      action = wezterm.action_callback(function(window, _, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    }),
+  },
+  { key = "<", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
+  { key = ">", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(1) },
   { key = "[", mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
   { key = "]", mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
 

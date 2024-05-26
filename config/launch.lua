@@ -1,8 +1,22 @@
 local platform = require("utils.platform")()
+local wezterm = require("wezterm")
 
-local options = {
-  default_prog = {},
-  launch_menu = {},
+local options = {}
+if wezterm.config_builder then
+  options = wezterm.config_builder()
+end
+
+-- local options = {
+--   default_prog = {},
+--   launch_menu = {},
+-- }
+--
+options.keys = {
+  {
+    key = "l",
+    mods = "ALT",
+    action = wezterm.action.ShowLauncher,
+  },
 }
 if platform.is_win then
   options.default_prog = { "ubuntu.exe" }
