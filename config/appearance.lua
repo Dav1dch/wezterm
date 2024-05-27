@@ -61,7 +61,7 @@ return {
   integrated_title_button_color = "auto",
   integrated_title_button_alignment = "Right",
   initial_cols = 120,
-  initial_rows = 24,
+  initial_rows = 34,
   window_padding = {
     left = 5,
     right = 10,
