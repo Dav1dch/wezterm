@@ -11,7 +11,7 @@ return {
 
   -- color scheme
   -- colors = colors,
-  color_scheme = "tokyonight_storm",
+  color_scheme = "tokyonight_night",
 
   -- background
   -- window_background_opacity = 1.00,
@@ -70,8 +70,8 @@ return {
   },
   window_close_confirmation = "AlwaysPrompt",
   window_frame = {
-    active_titlebar_bg = "#24283B",
-    inactive_titlebar_bg = "#24283b",
+    active_titlebar_bg = "#1a1b26",
+    inactive_titlebar_bg = "#16161e",
     -- font = fonts.font,
     -- font_size = fonts.font_size,
   },

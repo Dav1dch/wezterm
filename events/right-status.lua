@@ -6,11 +6,11 @@ M.separator_char = " ~ "
 
 M.colors = {
   date_fg = "#7F82BB",
-  date_bg = "#24283b",
+  date_bg = "#1a1b26",
   battery_fg = "#BB49B3",
-  battery_bg = "#24283b",
+  battery_bg = "#1a1b26",
   separator_fg = "#786D22",
-  separator_bg = "#24283b",
+  separator_bg = "#1a1b26",
 }
 
 M.cells = {} -- wezterm FormatItems (ref: https://wezfurlong.org/wezterm/config/lua/wezterm/format.html)

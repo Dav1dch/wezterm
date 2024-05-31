@@ -18,11 +18,11 @@ M.cells = {}
 M.colors = {
   default = {
     bg = "#bb9af7",
-    fg = "#24283b",
+    fg = "#1a1b26",
   },
   is_active = {
     bg = "#9ece6a",
-    fg = "#24283b",
+    fg = "#1a1b26",
   },
 
   hover = {
@@ -39,7 +39,7 @@ end
 M.set_title = function(process_name, static_title, active_title, max_width, inset)
   local title
   inset = inset or 6
--- 
+  -- 
   if process_name:len() > 0 and static_title:len() == 0 then
     title = "󰌪   " .. process_name .. " ~ " .. " "
   elseif static_title:len() > 0 then
